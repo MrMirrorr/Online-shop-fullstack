@@ -27,6 +27,7 @@ const port = 3001;
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static('../front/build'));
 app.use('/uploads', express.static('uploads'));
 
 // auth
