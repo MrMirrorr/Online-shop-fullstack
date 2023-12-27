@@ -64,6 +64,10 @@ app.get('/currency-rates', async (_, res) => {
 	}
 });
 
+app.get('*', (_, res) => {
+	res.sendFile(path.join(__dirname, '../front/build', 'index.html'));
+});
+
 app.listen(port, (err) =>
 	err ? console.log('Server error', err) : console.log(`Server OK | Port: ${port}`),
 );
