@@ -6,7 +6,7 @@ export const removeCartItemAsync = createAsyncThunk(
 	'cart/removeCartItemAsync',
 	async (itemId, { rejectWithValue }) => {
 		try {
-			await axios.delete(`/items/${itemId}`, {
+			await axios.delete(`/api/items/${itemId}`, {
 				timeout: '3000',
 			});
 

@@ -8,7 +8,7 @@ export const updateUserAsync = createAsyncThunk(
 		try {
 			const {
 				data: { data: user },
-			} = await axios.patch('/users/user', userData);
+			} = await axios.patch('/api/users/user', userData);
 			return { user };
 		} catch (err) {
 			return serverErrorCatcher(err, 'error updateUser', rejectWithValue);

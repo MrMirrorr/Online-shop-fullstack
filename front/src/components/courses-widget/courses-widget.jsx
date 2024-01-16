@@ -8,7 +8,7 @@ const CoursesWidgetContainer = ({ className }) => {
 	useEffect(() => {
 		const fetchCourses = async () => {
 			try {
-				const response = await axios.get('/currency-rates');
+				const response = await axios.get('/api/currency-rates');
 				const parser = new DOMParser();
 				const xmlDoc = parser.parseFromString(response.data, 'text/xml');
 

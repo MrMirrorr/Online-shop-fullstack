@@ -11,7 +11,7 @@ export const addCartItemAsync = createAsyncThunk(
 				data: {
 					data: { cartItem },
 				},
-			} = await axios.post(`/items`, itemData, { timeout: '3000' });
+			} = await axios.post(`/api/items`, itemData, { timeout: '3000' });
 
 			return { cartItem, quantity };
 		} catch (err) {

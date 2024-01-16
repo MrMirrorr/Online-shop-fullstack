@@ -6,8 +6,8 @@ export const fetchUsers = createAsyncThunk(
 	'users/fetchUsers',
 	async (_, { rejectWithValue }) => {
 		try {
-			const usersRes = await axios.get(`/users`, { timeout: 3000 });
-			const rolesRes = await axios.get('users/roles', { timeout: 3000 });
+			const usersRes = await axios.get(`/api/users`, { timeout: 3000 });
+			const rolesRes = await axios.get('/api/users/roles', { timeout: 3000 });
 
 			const {
 				data: { data: roles },

@@ -11,7 +11,7 @@ export const addFavoriteAsync = createAsyncThunk(
 					operation,
 					data: { favorite },
 				},
-			} = await axios.post(`/favorites/product/${productId}`, {
+			} = await axios.post(`/api/favorites/product/${productId}`, {
 				timeout: '3000',
 			});
 

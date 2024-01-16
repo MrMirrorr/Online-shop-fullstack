@@ -6,7 +6,7 @@ export const removeUserAsync = createAsyncThunk(
 	'users/removeUserAsync',
 	async (id, { rejectWithValue }) => {
 		try {
-			await axios.delete(`/users/${id}`, {
+			await axios.delete(`/api/users/${id}`, {
 				timeout: '3000',
 			});
 

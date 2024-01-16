@@ -36,27 +36,27 @@ app.use(express.static('../front/build'));
 app.use('/uploads', express.static('uploads'));
 
 // auth
-app.use('/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 // upload
-app.use('/upload', uploadRoutes);
+app.use('/api/upload', uploadRoutes);
 // user
-app.use('/users', userRoutes);
+app.use('/api/users', userRoutes);
 // category
-app.use('/categories', categoryRoutes);
+app.use('/api/categories', categoryRoutes);
 // product
-app.use('/products', productRoutes);
+app.use('/api/products', productRoutes);
 // comment
-app.use('/products', commentRoutes);
+app.use('/api/products', commentRoutes);
 // cart
-app.use('/cart', cartRoutes);
+app.use('/api/cart', cartRoutes);
 // cart item
-app.use('/items', cartItemRoutes);
+app.use('/api/items', cartItemRoutes);
 // order
-app.use('/orders', orderRoutes);
+app.use('/api/orders', orderRoutes);
 // favorite
-app.use('/favorites', favoriteRoutes);
+app.use('/api/favorites', favoriteRoutes);
 // currency rates api
-app.get('/currency-rates', async (_, res) => {
+app.get('/api/currency-rates', async (_, res) => {
 	try {
 		const response = await axios.get(
 			'https://www.agroprombank.com/xmlinformer.php?type=official',

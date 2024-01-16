@@ -7,7 +7,7 @@ export const fetchAuthMe = createAsyncThunk(
 	'auth/fetchAuthMe',
 	async (_, { rejectWithValue, dispatch }) => {
 		try {
-			const res = await axios.get('/auth/me', { timeout: 3000 });
+			const res = await axios.get('/api/auth/me', { timeout: 3000 });
 
 			const {
 				data: { data, error },

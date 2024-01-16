@@ -11,7 +11,7 @@ export const fetchProduct = createAsyncThunk(
 					data: { comments, ...product },
 					error,
 				},
-			} = await axios.get(`/products/${productId}`, { timeout: '3000' });
+			} = await axios.get(`/api/products/${productId}`, { timeout: '3000' });
 
 			return { product, comments, error };
 		} catch (err) {

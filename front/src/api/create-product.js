@@ -5,7 +5,7 @@ export const createProduct = async (data) => {
 	try {
 		const {
 			data: { data: newProduct },
-		} = await axios.post('/products', data);
+		} = await axios.post('/api/products', data);
 
 		return { newProduct };
 	} catch (err) {

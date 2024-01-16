@@ -10,7 +10,7 @@ export const fetchCart = createAsyncThunk(
 				data: {
 					data: { items, ...cart },
 				},
-			} = await axios.get(`/cart`, { timeout: '3000' });
+			} = await axios.get(`/api/cart`, { timeout: '3000' });
 
 			return { cart, items };
 		} catch (err) {

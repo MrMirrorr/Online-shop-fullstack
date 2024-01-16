@@ -6,7 +6,7 @@ export const removeProductAsync = createAsyncThunk(
 	'products/removeProductAsync',
 	async (id, { rejectWithValue }) => {
 		try {
-			await axios.delete(`/products/${id}`, {
+			await axios.delete(`/api/products/${id}`, {
 				timeout: '3000',
 			});
 

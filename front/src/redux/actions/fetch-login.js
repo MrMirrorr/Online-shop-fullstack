@@ -8,7 +8,7 @@ export const fetchLogin = createAsyncThunk(
 	'auth/fetchLogin',
 	async (values, { rejectWithValue, dispatch }) => {
 		try {
-			const res = await axios.post('/auth/login', values, { timeout: 3000 });
+			const res = await axios.post('/api/auth/login', values, { timeout: 3000 });
 			await dispatch(fetchCart());
 			await dispatch(fetchFavorites());
 

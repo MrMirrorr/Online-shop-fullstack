@@ -6,7 +6,7 @@ export const fetchRegister = createAsyncThunk(
 	'auth/fetchRegister',
 	async (values, { rejectWithValue }) => {
 		try {
-			const res = await axios.post('/auth/register', values, { timeout: 3000 });
+			const res = await axios.post('/api/auth/register', values, { timeout: 3000 });
 
 			const {
 				data: { data, error },

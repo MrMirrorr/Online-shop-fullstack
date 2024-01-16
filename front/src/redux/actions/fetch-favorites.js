@@ -6,7 +6,7 @@ export const fetchFavorites = createAsyncThunk(
 	'products/fetchFavorites',
 	async (_, { rejectWithValue }) => {
 		try {
-			const res = await axios.get(`/favorites`, { timeout: 3000 });
+			const res = await axios.get(`/api/favorites`, { timeout: 3000 });
 
 			const {
 				data: {

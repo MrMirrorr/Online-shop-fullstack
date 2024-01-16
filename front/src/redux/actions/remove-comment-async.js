@@ -10,7 +10,7 @@ export const removeCommentAsync = createAsyncThunk(
 
 			const {
 				data: { error },
-			} = await axios.delete(`/products/${productId}/comments/${commentId}`, {
+			} = await axios.delete(`/api/products/${productId}/comments/${commentId}`, {
 				timeout: '3000',
 			});
 

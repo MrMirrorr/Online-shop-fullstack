@@ -11,7 +11,7 @@ export const addCommentAsync = createAsyncThunk(
 			const {
 				data: { data, error },
 			} = await axios.post(
-				`/products/${productId}/comments`,
+				`/api/products/${productId}/comments`,
 				{ content: newComment },
 				{
 					timeout: '3000',

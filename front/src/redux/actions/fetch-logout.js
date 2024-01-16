@@ -8,7 +8,7 @@ export const fetchLogout = createAsyncThunk(
 	'auth/fetchLogout',
 	async (_, { dispatch }) => {
 		try {
-			await axios.post('/auth/logout');
+			await axios.post('/api/auth/logout');
 			dispatch(resetUsers());
 			dispatch(resetCart());
 			dispatch(resetFavorites());

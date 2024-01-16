@@ -3,7 +3,7 @@ import { serverErrorHandler } from '../utils';
 
 export const deleteAllCartItems = async (cartId) => {
 	try {
-		const { data } = await axios.delete(`/items/cart/${cartId}`, {
+		const { data } = await axios.delete(`/api/items/cart/${cartId}`, {
 			timeout: '3000',
 		});
 
