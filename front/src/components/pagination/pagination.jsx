@@ -1,7 +1,11 @@
+import { useDispatch } from 'react-redux';
+import { setCurrentPage } from '../../redux/slices/products';
 import { Button } from '..';
 import styled from 'styled-components';
 
-const PaginationContainer = ({ className, page, lastPage, setPage }) => {
+const PaginationContainer = ({ className, currentPage, lastPage }) => {
+	const dispatch = useDispatch();
+
 	return (
 		<div className={className}>
 			<Button
@@ -10,8 +14,8 @@ const PaginationContainer = ({ className, page, lastPage, setPage }) => {
 				color="#525864"
 				fontWeight="400"
 				radius="20px"
-				disabled={page === 1}
-				onClick={() => setPage(1)}
+				disabled={currentPage === 1}
+				onClick={() => dispatch(setCurrentPage(1))}
 			>
 				В начало
 			</Button>
@@ -21,13 +25,13 @@ const PaginationContainer = ({ className, page, lastPage, setPage }) => {
 				color="#525864"
 				fontWeight="400"
 				radius="20px"
-				disabled={page === 1}
-				onClick={() => setPage((prev) => prev - 1)}
+				disabled={currentPage === 1}
+				onClick={() => dispatch(setCurrentPage(currentPage - 1))}
 			>
 				Предыдущая
 			</Button>
 			<div className="current-page">
-				{page} из {lastPage}
+				{currentPage} из {lastPage}
 			</div>
 			<Button
 				width="130px"
@@ -35,8 +39,8 @@ const PaginationContainer = ({ className, page, lastPage, setPage }) => {
 				color="#525864"
 				fontWeight="400"
 				radius="20px"
-				disabled={page === lastPage}
-				onClick={() => setPage((prev) => prev + 1)}
+				disabled={currentPage === lastPage}
+				onClick={() => dispatch(setCurrentPage(currentPage + 1))}
 			>
 				Следующая
 			</Button>
@@ -46,8 +50,8 @@ const PaginationContainer = ({ className, page, lastPage, setPage }) => {
 				color="#525864"
 				fontWeight="400"
 				radius="20px"
-				disabled={page === lastPage}
-				onClick={() => setPage(lastPage)}
+				disabled={currentPage === lastPage}
+				onClick={() => dispatch(setCurrentPage(lastPage))}
 			>
 				В конец
 			</Button>

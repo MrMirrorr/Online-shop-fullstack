@@ -5,13 +5,18 @@ import { selectSearch } from '../../../../redux/selectors';
 import { debounce } from '../../../../utils';
 import { Icon, Input } from '../../../../components';
 import styled from 'styled-components';
+import { setCurrentPage } from '../../../../redux/slices/products';
 
 const SearchContainer = ({ className }) => {
 	const dispatch = useDispatch();
 	const { value } = useSelector(selectSearch);
 
 	const startDelayedSearch = useMemo(
-		() => debounce(() => dispatch(setShouldSearch()), 2000),
+		() =>
+			debounce(() => {
+				dispatch(setShouldSearch());
+				dispatch(setCurrentPage(1));
+			}, 2000),
 		[dispatch],
 	);
 

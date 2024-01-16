@@ -3,6 +3,7 @@ import { fetchProducts, removeProductAsync } from '../actions';
 
 const initialState = {
 	products: [],
+	currentPage: 1,
 	lastPage: 1,
 	isLoading: true,
 	error: null,
@@ -13,6 +14,11 @@ const initialState = {
 const productsSlice = createSlice({
 	name: 'products',
 	initialState,
+	reducers: {
+		setCurrentPage(state, action) {
+			state.currentPage = action.payload;
+		},
+	},
 	extraReducers: (builder) => {
 		builder
 			// fetch products
@@ -55,5 +61,7 @@ const productsSlice = createSlice({
 			});
 	},
 });
+
+export const { setCurrentPage } = productsSlice.actions;
 
 export const productsReducer = productsSlice.reducer;

@@ -7,6 +7,7 @@ import { generateLoader } from '../../utils';
 import { SidebarLoader } from '../loaders';
 import { AlertError } from '../../components';
 import styled from 'styled-components';
+import { setCurrentPage } from '../../redux/slices/products';
 
 const SidebarContainer = ({ className }) => {
 	const dispatch = useDispatch();
@@ -21,7 +22,10 @@ const SidebarContainer = ({ className }) => {
 			<ul>
 				<li
 					className={!active ? 'selected' : ''}
-					onClick={() => dispatch(resetActiveCategory())}
+					onClick={() => {
+						dispatch(resetActiveCategory());
+						dispatch(setCurrentPage(1));
+					}}
 				>
 					Все товары
 				</li>
@@ -35,7 +39,10 @@ const SidebarContainer = ({ className }) => {
 						<li
 							className={active === id ? 'selected' : ''}
 							key={id}
-							onClick={() => dispatch(setActiveCategory(id))}
+							onClick={() => {
+								dispatch(setActiveCategory(id));
+								dispatch(setCurrentPage(1));
+							}}
 						>
 							{title}
 						</li>
